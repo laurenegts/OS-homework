@@ -22,7 +22,7 @@ int main() {
 //	sem_t* avail = sem_open("availableSemaphore", O_RDWR);
 //	sem_t* mutex = sem_open("mutexSemaphore", O_RDWR);
 
-	int loop = 20;
+	int loop = 10;
 	printf("\nConsumer ready to receive %d items.\n", loop);
 
 	for(int i = 0; i < loop; ++i) {
@@ -48,13 +48,13 @@ int main() {
 	sem_close(avail);
 	sem_close(mutex);
 
-//	sem_unlink("fillSemaphore");
-//	sem_unlink("availableSemaphore");
-//	sem_unlink("mutexSemaphore");
+	sem_unlink("fillSemaphore");
+	sem_unlink("availableSemaphore");
+	sem_unlink("mutexSemaphore");
 
 	munmap(table, sizeof(int));
 	close(shm_fd);
-//	shm_unlink("table");
+	shm_unlink("table");
 
 	printf("Consumer cleaned up!\n");
 	return 0;

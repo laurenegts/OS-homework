@@ -21,7 +21,7 @@ int main() {
 	sem_init(avail, 1, 2);
 	sem_init(mutex, 1, 1);
 
-	int loop = 20;
+	int loop = 10;
 	printf("\nProducer ready to create %d items.\n", loop);
 
 //	sem_post(avail);
