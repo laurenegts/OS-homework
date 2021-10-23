@@ -26,7 +26,7 @@ int main() {
 
 //	sem_post(avail);
 
-	for(int i = 1; i < loop; ++i) {
+	for(int i = 0; i < loop; ++i) {
 	//	printf("in producer for loop\n");
 		//printf("producer after sem_post(avail)\n");
 		sem_wait(avail);

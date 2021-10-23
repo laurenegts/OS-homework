@@ -25,7 +25,7 @@ int main() {
 	int loop = 20;
 	printf("\nConsumer ready to receive %d items.\n", loop);
 
-	for(int i = 1; i < loop; ++i) {
+	for(int i = 0; i < loop; ++i) {
 	//	printf("in consumer for loop\n");
 		sem_wait(fill);
 	//	printf("consumer after fill\n");
@@ -43,7 +43,7 @@ int main() {
 		sem_post(avail);
 	}
 
-	printf("consumer out of for loop\n");
+//	printf("consumer out of for loop\n");
 	sem_close(fill);
 	sem_close(avail);
 	sem_close(mutex);
