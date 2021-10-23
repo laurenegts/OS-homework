@@ -26,16 +26,16 @@ int main() {
 	printf("\nConsumer ready to receive %d items.\n", loop);
 
 	for(int i = 1; i < loop; ++i) {
-		printf("in consumer for loop\n");
+	//	printf("in consumer for loop\n");
 		sem_wait(fill);
-		printf("consumer after fill\n");
+	//	printf("consumer after fill\n");
 
 		int ms = rand() % 2 + 1;
 		sleep(ms);
-		printf("consumer out of sleep\n");
+	//	printf("consumer out of sleep\n");
 
 		sem_wait(mutex);
-		printf("consumer in mutex\n");
+	//	printf("consumer in mutex\n");
 		--(*table);
 		sem_post(mutex);
 	
@@ -53,7 +53,7 @@ int main() {
 //	sem_unlink("mutexSemaphore");
 
 	munmap(table, sizeof(int));
-	close(shm_fd); //blah
+	close(shm_fd);
 //	shm_unlink("table");
 
 	printf("Consumer cleaned up!\n");
