@@ -1,3 +1,5 @@
+This code is based on code shown by Dr. Qiang Guan in his Operating Systems lecture on October 19, 2021.
+
 Prerequisites:
 Git, gcc, and the pthread library.
 Written in Vim on RHEL 8.
